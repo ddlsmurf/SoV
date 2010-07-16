@@ -1,0 +1,56 @@
+SoV - Starcraft over VPN v2.0
+-----------------------------
+Written by Eric Doughty-Papassideris
+
+http://s-softs.com/SoV.html
+
+Description
+-----------
+SoV allows to connect to a starcraft game
+over networks that don't route broadcast
+packets - such as OpenVPN (I hear version 2.0
+fixed it though) or Hamachi on Mac OS X.
+
+How it works:
+-------------
+When listing games, starcraft sends a broadcast
+packet that servers respond to with game
+details. SoV uses libpcap to see such messages,
+and injects them over another interface (while
+correcting the source address, and setting the
+destination to the ip provided on the command
+line). The server sees the packet, doesn't care
+that its not a broadcast, and responds to the
+client with a normal UDP packet.
+The client sees the game, and the rest works
+fine without broadcast.
+On Windows, the pcap_sendpacket does not add the Ethernet header
+as it was tiresome to implement an ARP exchange, when INJECT_MODE 
+is not defined, packets are forwarded as normal UDP packets.
+
+How to build:
+-------------
+make for mac
+ctrl+shift+b for visual studio
+
+Credits
+-------
+  - sniffex.c sample by The Tcpdump Group
+  - WinPCap team
+  - B. Borde, lemarsu for their patience in testing this.
+  - Portions in SoV_Utils.* under the following notices:
+	-	Copyright (c) 1999 - 2005 NetGroup, Politecnico di Torino (Italy)
+	-	Copyright (c) 2005 - 2006 CACE Technologies, Davis (California)
+
+License
+-------
+IDC v2.0 ("I Dont Care")
+
+Disclaimer
+----------
+Carefull: I don't want to know about what
+  happened (or not) because of this code.
+  You are running it "as-is",
+  and it "is not my problem".
+
+

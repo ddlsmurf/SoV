@@ -1,0 +1,48 @@
+# xcode noise
+*.mode1v3
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.pyc
+*~.nib/
+build/*
+
+# Textmate - if you build your xcode projects with it
+*.tm_build_errors
+
+# old skool
+.svn
+_svn
+
+# osx noise
+.DS_Store
+profile
+
+# Windows noise
+Thumbs.db
+*.exe
+*.dll
+
+# Delphi noise
+*.~*
+*.*~
+*.bak
+*.local
+*.res
+*.dcu
+*.ini
+__history
+*.identcache
+*.swp
+
+# VS noise
+*.pdb
+*.suo
+*.scc
+*.vspscc
+*.user
+*.cache
+*.log
+*.rdl.data
+bin/
+obj/
