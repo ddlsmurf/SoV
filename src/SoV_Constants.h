@@ -18,6 +18,6 @@
 #define BANNER				VERSION " - " BANNER_TITLE
 
 #define STARCRAFT_PORT		6111
-#define PCAP_FILTER_FORMAT	"udp port %hu"
+#define PCAP_FILTER_FORMAT	"udp port %hu and dst net 255.255.255.255"
 
 #endif
