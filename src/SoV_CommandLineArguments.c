@@ -146,7 +146,7 @@ char						**read_options(void *options, int ac, char **av, commandline_option_t 
 		case CLO_TYPE_TERMINAL:
 			result_int = read_option(argument->flag, newav, NULL);
 			if (result_int) {
-				((callback_empty*)argument->offset)();
+				((callback_empty*)((uintptr_t)argument->offset))();
 				return 0;
 			}
 			break;
