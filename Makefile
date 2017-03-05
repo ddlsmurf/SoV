@@ -35,10 +35,10 @@ $(OBJ) : $(SRCH)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	\rm $(OBJ)
+	-\rm $(OBJ)
 
 fclean: clean
-	\rm ./$(PROG)
+	-\rm ./$(PROG)
 
 re: clean all
 
