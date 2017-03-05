@@ -154,7 +154,7 @@ packet_layers_t		*packet_split(u_int first_layer, const u_char *data, u_int len)
 			if (result->udp) {
 				if (((u_int)ntohs(result->udp->len) - result->udp_size) != len) {
 					result->data_size = ntohs(result->udp->len) - result->udp_size;
-					fprintf(stderr, "\nWarning: Inconsistent packet size (%u instead of %hu)\n",
+					fprintf(stderr, "\nWarning: Inconsistent packet size (%u instead of %u)\n",
 						len, ntohs(result->udp->len) - result->udp_size);
 				}
 			}

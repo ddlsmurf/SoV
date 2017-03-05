@@ -69,7 +69,7 @@ hostinfo_t				*get_hostinfo(char *name, u_short port)
 	if (host == NULL)
 		return NULL;
 	if (host->h_length != sizeof(int)) {
-		fprintf(stderr, "Error resolving '%s': Weirdness detected, address length %hu." EOL, name, host->h_length);
+		fprintf(stderr, "Error resolving '%s': Weirdness detected, address length %d." EOL, name, host->h_length);
 		return NULL;
 	}
 	bcopy(host->h_addr, &(result->sin.sin_addr), host->h_length);

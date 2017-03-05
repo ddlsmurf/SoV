@@ -227,7 +227,7 @@ int			init_sov(globals_t *g)
 	else
 	{
 	if (g->option.verbose)
-		printf("Opening %s UDP socket on port %hu..." EOL,
+		printf("Opening %s UDP socket on port %d..." EOL,
 		g->option.bind_udp_port ? "listening" : "raw",
 		g->option.port);
 	if (!add_socket_output_device(&g->output_devices,

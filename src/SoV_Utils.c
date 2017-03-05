@@ -131,7 +131,7 @@ char		*packettos(u_int first_layer, packet_layers_t *packet, u_int last_layer, u
 			if (packet->tcp)
 			{
 				line = snprintf(buffer, SNAP_LEN,
-					"%s\n  = tcp: from port %hu to %hu, %hu data offset\n",
+					"%s\n  = tcp: from port %hu to %hu, %d data offset\n",
 					with_raw ? hexdump((u_char *)packet->tcp, packet->tcp_size) : "",
 					ntohs(packet->tcp->sport),
 					ntohs(packet->tcp->dport),
@@ -142,7 +142,7 @@ char		*packettos(u_int first_layer, packet_layers_t *packet, u_int last_layer, u
 		case PACKET_LAYER_UDP:
 			if (packet->udp) {
 				line = snprintf(buffer, SNAP_LEN,
-					"%s\n  = udp: from port %hu to %hu, %hu byte payload\n",
+					"%s\n  = udp: from port %hu to %hu, %u byte payload\n",
 					with_raw ? hexdump((u_char *)packet->udp, packet->udp_size) : "",
 					ntohs(packet->udp->sport),
 					ntohs(packet->udp->dport),
@@ -153,7 +153,7 @@ char		*packettos(u_int first_layer, packet_layers_t *packet, u_int last_layer, u
 		case PACKET_LAYER_DATA:
 			if (packet->data) {
 				line = snprintf(buffer, SNAP_LEN,
-					"%s\n  =data: of len %hu\n",
+					"%s\n  =data: of len %u\n",
 					with_raw ? hexdump((u_char *)packet->data, packet->data_size) : "",
 					packet->data_size);
 			}
